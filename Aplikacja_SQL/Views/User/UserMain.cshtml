@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Aplikacja_SQL.Models.TEST>
+@{
+    ViewBag.Title = "_Layout2";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2 style="float:left;" class="Title">Witaj @ViewBag.Imie :)</h2>
+@using (Html.BeginForm("Logout", "User"))
+{
+    <button class="btn btn-link"> <i class="icon-logout" style="position:relative; left:750px; top:20px; font-size:30px; color:white"> WYLOGUJ </i> </button>
+}
+
+
+
+<hr />
+
+
+<div>
+    <i class="icon-user"></i>
+    @using (Html.BeginForm("User_EditUser", "User"))
+    {
+
+        <div class="col-md-offset-2 col-md-10">
+            <button class="btn" style="font-size:25px;position:relative; right:435px; top:120px;"><i class="icon-pencil"></i>Edytuj</button>
+        </div>
+    }
+</div>
+
+<div id="nawbar" style="border-radius:20px;">
+    @using (Html.BeginForm("User_ViewBaza", "User"))
+    {
+        <div class="col-md-offset-2 col-md-10" style="position:relative; float:left;">
+            <button class="btn" style="font-size:25px;position:relative; right:390px; top:-55px;"><i class="icon-database"></i>Bazy</button>
+        </div>
+    }
+
+    @using (Html.BeginForm("User_AddTest", "User"))
+    {
+        <div class="col-md-offset-2 col-md-10" style="position:relative; float:left;">
+            <button class="btn" style="font-size:25px;position:relative; top:-115px; right:80px;"><i class="icon-book-open"></i>Testy</button>
+        </div>
+    }
+
+</div>
+
+
+
+
+<div style="clear:both;">
+</div>
+

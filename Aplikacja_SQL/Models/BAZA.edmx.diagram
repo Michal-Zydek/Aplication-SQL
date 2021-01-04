@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="91db59d977ac4c2e82c7b73ed2d6d210" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.BAZA_DANYCH" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ODPOWIEDZ" Width="1.5" PointX="9.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PYTANIE" Width="1.5" PointX="7.5" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TEST" Width="1.5" PointX="5.25" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.UZYTKOWNIK" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK__BAZA_DANY__ID_UZ__7C4F7684" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__TEST__ID_BAZA__7F2BE32F" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__ODPOWIEDZ__ID_PY__05D8E0BE" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__ODPOWIEDZ__ID_TE__06CD04F7" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__ODPOWIEDZ__ID_UZ__07C12930" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__PYTANIE__ID_TEST__02FC7413" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__TEST__ID_UZYTKOW__00200768" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

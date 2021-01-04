@@ -1,0 +1,73 @@
+﻿@model Aplikacja_SQL.Models.UZYTKOWNIK
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <h2 class="Title">Edytuj profil :P</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.ID_UZYTKOWNIKA)
+    @Html.HiddenFor(model => model.TYP_KONTA)
+    @Html.HiddenFor(model => model.HASLO)
+    @Html.HiddenFor(model => model.LOGIN)
+
+    <div id="Bodycontener1">
+
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.IMIE, new { htmlAttributes = new { @class = "form-control", placeholder = "Imie" } })
+                @Html.ValidationMessageFor(model => model.IMIE, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NAZWISKO, new { htmlAttributes = new { @class = "form-control", placeholder = "Nazwisko" } })
+                @Html.ValidationMessageFor(model => model.NAZWISKO, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+    </div>
+
+    <div id="LineEditUser"> </div>
+
+    <div id="Bodycontener2" style="left:20px; position:relative;">
+
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NR_INDEKSU, new { htmlAttributes = new { @class = "form-control", placeholder = "Numer Indeksu" } })
+                @Html.ValidationMessageFor(model => model.NR_INDEKSU, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EMAIL, new { htmlAttributes = new { @class = "form-control", placeholder = "E-mail" } })
+                @Html.ValidationMessageFor(model => model.EMAIL, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10" style="clear:both">
+            <input type="submit"  style="background-color:#00f530; width:150px;position:relative; height:40px; " value="Zapisz" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+    }
+
+    

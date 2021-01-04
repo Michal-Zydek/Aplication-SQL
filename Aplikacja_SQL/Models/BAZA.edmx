@@ -1,0 +1,464 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BAZA_DANYCH">
+          <Key>
+            <PropertyRef Name="ID_BAZA" />
+          </Key>
+          <Property Name="ID_BAZA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TYP" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="SCIEZKA" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="HASLO" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="LOGIN" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="NAZWA" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="ID_UZYTKOWNIKA" Type="int" />
+        </EntityType>
+        <EntityType Name="ODPOWIEDZ">
+          <Key>
+            <PropertyRef Name="ID_ODPOWIEDZI" />
+          </Key>
+          <Property Name="ID_ODPOWIEDZI" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ODPOWIEDZ" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="ID_PYTANIE" Type="int" Nullable="false" />
+          <Property Name="ID_TEST" Type="int" Nullable="false" />
+          <Property Name="ID_UZYTKOWNIKA" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PYTANIE">
+          <Key>
+            <PropertyRef Name="ID_PYTANIE" />
+          </Key>
+          <Property Name="ID_PYTANIE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PYTANIE" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="ID_TEST" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TEST">
+          <Key>
+            <PropertyRef Name="ID_TEST" />
+          </Key>
+          <Property Name="ID_TEST" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAZWA" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="CZAS_START" Type="varchar" MaxLength="20" />
+          <Property Name="CZAS_STOP" Type="varchar" MaxLength="20" />
+          <Property Name="KLUCZ" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ID_BAZA" Type="int" />
+          <Property Name="ID_UZYTKOWNIKA" Type="int" />
+        </EntityType>
+        <EntityType Name="UZYTKOWNIK">
+          <Key>
+            <PropertyRef Name="ID_UZYTKOWNIKA" />
+          </Key>
+          <Property Name="ID_UZYTKOWNIKA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IMIE" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="NAZWISKO" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="NR_INDEKSU" Type="int" Nullable="false" />
+          <Property Name="EMAIL" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="TYP_KONTA" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="LOGIN" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="HASLO" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__BAZA_DANY__ID_UZ__7C4F7684">
+          <End Role="UZYTKOWNIK" Type="Self.UZYTKOWNIK" Multiplicity="0..1" />
+          <End Role="BAZA_DANYCH" Type="Self.BAZA_DANYCH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UZYTKOWNIK">
+              <PropertyRef Name="ID_UZYTKOWNIKA" />
+            </Principal>
+            <Dependent Role="BAZA_DANYCH">
+              <PropertyRef Name="ID_UZYTKOWNIKA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ODPOWIEDZ__ID_PY__05D8E0BE">
+          <End Role="PYTANIE" Type="Self.PYTANIE" Multiplicity="1" />
+          <End Role="ODPOWIEDZ" Type="Self.ODPOWIEDZ" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PYTANIE">
+              <PropertyRef Name="ID_PYTANIE" />
+            </Principal>
+            <Dependent Role="ODPOWIEDZ">
+              <PropertyRef Name="ID_PYTANIE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ODPOWIEDZ__ID_TE__06CD04F7">
+          <End Role="TEST" Type="Self.TEST" Multiplicity="1" />
+          <End Role="ODPOWIEDZ" Type="Self.ODPOWIEDZ" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TEST">
+              <PropertyRef Name="ID_TEST" />
+            </Principal>
+            <Dependent Role="ODPOWIEDZ">
+              <PropertyRef Name="ID_TEST" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ODPOWIEDZ__ID_UZ__07C12930">
+          <End Role="UZYTKOWNIK" Type="Self.UZYTKOWNIK" Multiplicity="1" />
+          <End Role="ODPOWIEDZ" Type="Self.ODPOWIEDZ" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UZYTKOWNIK">
+              <PropertyRef Name="ID_UZYTKOWNIKA" />
+            </Principal>
+            <Dependent Role="ODPOWIEDZ">
+              <PropertyRef Name="ID_UZYTKOWNIKA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PYTANIE__ID_TEST__02FC7413">
+          <End Role="TEST" Type="Self.TEST" Multiplicity="1" />
+          <End Role="PYTANIE" Type="Self.PYTANIE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TEST">
+              <PropertyRef Name="ID_TEST" />
+            </Principal>
+            <Dependent Role="PYTANIE">
+              <PropertyRef Name="ID_TEST" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TEST__ID_BAZA__7F2BE32F">
+          <End Role="BAZA_DANYCH" Type="Self.BAZA_DANYCH" Multiplicity="0..1" />
+          <End Role="TEST" Type="Self.TEST" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BAZA_DANYCH">
+              <PropertyRef Name="ID_BAZA" />
+            </Principal>
+            <Dependent Role="TEST">
+              <PropertyRef Name="ID_BAZA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TEST__ID_UZYTKOW__00200768">
+          <End Role="UZYTKOWNIK" Type="Self.UZYTKOWNIK" Multiplicity="0..1" />
+          <End Role="TEST" Type="Self.TEST" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UZYTKOWNIK">
+              <PropertyRef Name="ID_UZYTKOWNIKA" />
+            </Principal>
+            <Dependent Role="TEST">
+              <PropertyRef Name="ID_UZYTKOWNIKA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="BAZA_DANYCH" EntityType="Self.BAZA_DANYCH" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ODPOWIEDZ" EntityType="Self.ODPOWIEDZ" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PYTANIE" EntityType="Self.PYTANIE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TEST" EntityType="Self.TEST" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UZYTKOWNIK" EntityType="Self.UZYTKOWNIK" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__BAZA_DANY__ID_UZ__7C4F7684" Association="Self.FK__BAZA_DANY__ID_UZ__7C4F7684">
+            <End Role="UZYTKOWNIK" EntitySet="UZYTKOWNIK" />
+            <End Role="BAZA_DANYCH" EntitySet="BAZA_DANYCH" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ODPOWIEDZ__ID_PY__05D8E0BE" Association="Self.FK__ODPOWIEDZ__ID_PY__05D8E0BE">
+            <End Role="PYTANIE" EntitySet="PYTANIE" />
+            <End Role="ODPOWIEDZ" EntitySet="ODPOWIEDZ" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ODPOWIEDZ__ID_TE__06CD04F7" Association="Self.FK__ODPOWIEDZ__ID_TE__06CD04F7">
+            <End Role="TEST" EntitySet="TEST" />
+            <End Role="ODPOWIEDZ" EntitySet="ODPOWIEDZ" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ODPOWIEDZ__ID_UZ__07C12930" Association="Self.FK__ODPOWIEDZ__ID_UZ__07C12930">
+            <End Role="UZYTKOWNIK" EntitySet="UZYTKOWNIK" />
+            <End Role="ODPOWIEDZ" EntitySet="ODPOWIEDZ" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PYTANIE__ID_TEST__02FC7413" Association="Self.FK__PYTANIE__ID_TEST__02FC7413">
+            <End Role="TEST" EntitySet="TEST" />
+            <End Role="PYTANIE" EntitySet="PYTANIE" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TEST__ID_BAZA__7F2BE32F" Association="Self.FK__TEST__ID_BAZA__7F2BE32F">
+            <End Role="BAZA_DANYCH" EntitySet="BAZA_DANYCH" />
+            <End Role="TEST" EntitySet="TEST" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TEST__ID_UZYTKOW__00200768" Association="Self.FK__TEST__ID_UZYTKOW__00200768">
+            <End Role="UZYTKOWNIK" EntitySet="UZYTKOWNIK" />
+            <End Role="TEST" EntitySet="TEST" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BAZA_DANYCH">
+          <Key>
+            <PropertyRef Name="ID_BAZA" />
+          </Key>
+          <Property Name="ID_BAZA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TYP" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="SCIEZKA" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="HASLO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LOGIN" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NAZWA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ID_UZYTKOWNIKA" Type="Int32" />
+          <NavigationProperty Name="UZYTKOWNIK" Relationship="Self.FK__BAZA_DANY__ID_UZ__7C4F7684" FromRole="BAZA_DANYCH" ToRole="UZYTKOWNIK" />
+          <NavigationProperty Name="TEST" Relationship="Self.FK__TEST__ID_BAZA__7F2BE32F" FromRole="BAZA_DANYCH" ToRole="TEST" />
+        </EntityType>
+        <EntityType Name="ODPOWIEDZ">
+          <Key>
+            <PropertyRef Name="ID_ODPOWIEDZI" />
+          </Key>
+          <Property Name="ID_ODPOWIEDZI" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ODPOWIEDZ1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ID_PYTANIE" Type="Int32" Nullable="false" />
+          <Property Name="ID_TEST" Type="Int32" Nullable="false" />
+          <Property Name="ID_UZYTKOWNIKA" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PYTANIE" Relationship="Self.FK__ODPOWIEDZ__ID_PY__05D8E0BE" FromRole="ODPOWIEDZ" ToRole="PYTANIE" />
+          <NavigationProperty Name="TEST" Relationship="Self.FK__ODPOWIEDZ__ID_TE__06CD04F7" FromRole="ODPOWIEDZ" ToRole="TEST" />
+          <NavigationProperty Name="UZYTKOWNIK" Relationship="Self.FK__ODPOWIEDZ__ID_UZ__07C12930" FromRole="ODPOWIEDZ" ToRole="UZYTKOWNIK" />
+        </EntityType>
+        <EntityType Name="PYTANIE">
+          <Key>
+            <PropertyRef Name="ID_PYTANIE" />
+          </Key>
+          <Property Name="ID_PYTANIE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PYTANIE1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ID_TEST" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ODPOWIEDZ" Relationship="Self.FK__ODPOWIEDZ__ID_PY__05D8E0BE" FromRole="PYTANIE" ToRole="ODPOWIEDZ" />
+          <NavigationProperty Name="TEST" Relationship="Self.FK__PYTANIE__ID_TEST__02FC7413" FromRole="PYTANIE" ToRole="TEST" />
+        </EntityType>
+        <EntityType Name="TEST">
+          <Key>
+            <PropertyRef Name="ID_TEST" />
+          </Key>
+          <Property Name="ID_TEST" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAZWA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CZAS_START" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CZAS_STOP" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="KLUCZ" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ID_BAZA" Type="Int32" />
+          <Property Name="ID_UZYTKOWNIKA" Type="Int32" />
+          <NavigationProperty Name="BAZA_DANYCH" Relationship="Self.FK__TEST__ID_BAZA__7F2BE32F" FromRole="TEST" ToRole="BAZA_DANYCH" />
+          <NavigationProperty Name="ODPOWIEDZ" Relationship="Self.FK__ODPOWIEDZ__ID_TE__06CD04F7" FromRole="TEST" ToRole="ODPOWIEDZ" />
+          <NavigationProperty Name="PYTANIE" Relationship="Self.FK__PYTANIE__ID_TEST__02FC7413" FromRole="TEST" ToRole="PYTANIE" />
+          <NavigationProperty Name="UZYTKOWNIK" Relationship="Self.FK__TEST__ID_UZYTKOW__00200768" FromRole="TEST" ToRole="UZYTKOWNIK" />
+        </EntityType>
+        <EntityType Name="UZYTKOWNIK">
+          <Key>
+            <PropertyRef Name="ID_UZYTKOWNIKA" />
+          </Key>
+          <Property Name="ID_UZYTKOWNIKA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IMIE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NAZWISKO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NR_INDEKSU" Type="Int32" Nullable="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TYP_KONTA" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="LOGIN" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="HASLO" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="BAZA_DANYCH" Relationship="Self.FK__BAZA_DANY__ID_UZ__7C4F7684" FromRole="UZYTKOWNIK" ToRole="BAZA_DANYCH" />
+          <NavigationProperty Name="ODPOWIEDZ" Relationship="Self.FK__ODPOWIEDZ__ID_UZ__07C12930" FromRole="UZYTKOWNIK" ToRole="ODPOWIEDZ" />
+          <NavigationProperty Name="TEST" Relationship="Self.FK__TEST__ID_UZYTKOW__00200768" FromRole="UZYTKOWNIK" ToRole="TEST" />
+        </EntityType>
+        <Association Name="FK__BAZA_DANY__ID_UZ__7C4F7684">
+          <End Role="UZYTKOWNIK" Type="Self.UZYTKOWNIK" Multiplicity="0..1" />
+          <End Role="BAZA_DANYCH" Type="Self.BAZA_DANYCH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UZYTKOWNIK">
+              <PropertyRef Name="ID_UZYTKOWNIKA" />
+            </Principal>
+            <Dependent Role="BAZA_DANYCH">
+              <PropertyRef Name="ID_UZYTKOWNIKA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TEST__ID_BAZA__7F2BE32F">
+          <End Role="BAZA_DANYCH" Type="Self.BAZA_DANYCH" Multiplicity="0..1" />
+          <End Role="TEST" Type="Self.TEST" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BAZA_DANYCH">
+              <PropertyRef Name="ID_BAZA" />
+            </Principal>
+            <Dependent Role="TEST">
+              <PropertyRef Name="ID_BAZA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ODPOWIEDZ__ID_PY__05D8E0BE">
+          <End Role="PYTANIE" Type="Self.PYTANIE" Multiplicity="1" />
+          <End Role="ODPOWIEDZ" Type="Self.ODPOWIEDZ" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PYTANIE">
+              <PropertyRef Name="ID_PYTANIE" />
+            </Principal>
+            <Dependent Role="ODPOWIEDZ">
+              <PropertyRef Name="ID_PYTANIE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ODPOWIEDZ__ID_TE__06CD04F7">
+          <End Role="TEST" Type="Self.TEST" Multiplicity="1" />
+          <End Role="ODPOWIEDZ" Type="Self.ODPOWIEDZ" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TEST">
+              <PropertyRef Name="ID_TEST" />
+            </Principal>
+            <Dependent Role="ODPOWIEDZ">
+              <PropertyRef Name="ID_TEST" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ODPOWIEDZ__ID_UZ__07C12930">
+          <End Role="UZYTKOWNIK" Type="Self.UZYTKOWNIK" Multiplicity="1" />
+          <End Role="ODPOWIEDZ" Type="Self.ODPOWIEDZ" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UZYTKOWNIK">
+              <PropertyRef Name="ID_UZYTKOWNIKA" />
+            </Principal>
+            <Dependent Role="ODPOWIEDZ">
+              <PropertyRef Name="ID_UZYTKOWNIKA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PYTANIE__ID_TEST__02FC7413">
+          <End Role="TEST" Type="Self.TEST" Multiplicity="1" />
+          <End Role="PYTANIE" Type="Self.PYTANIE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TEST">
+              <PropertyRef Name="ID_TEST" />
+            </Principal>
+            <Dependent Role="PYTANIE">
+              <PropertyRef Name="ID_TEST" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TEST__ID_UZYTKOW__00200768">
+          <End Role="UZYTKOWNIK" Type="Self.UZYTKOWNIK" Multiplicity="0..1" />
+          <End Role="TEST" Type="Self.TEST" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UZYTKOWNIK">
+              <PropertyRef Name="ID_UZYTKOWNIKA" />
+            </Principal>
+            <Dependent Role="TEST">
+              <PropertyRef Name="ID_UZYTKOWNIKA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="APLIKACJA_SQLEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BAZA_DANYCH" EntityType="Self.BAZA_DANYCH" />
+          <EntitySet Name="ODPOWIEDZ" EntityType="Self.ODPOWIEDZ" />
+          <EntitySet Name="PYTANIE" EntityType="Self.PYTANIE" />
+          <EntitySet Name="TEST" EntityType="Self.TEST" />
+          <EntitySet Name="UZYTKOWNIK" EntityType="Self.UZYTKOWNIK" />
+          <AssociationSet Name="FK__BAZA_DANY__ID_UZ__7C4F7684" Association="Self.FK__BAZA_DANY__ID_UZ__7C4F7684">
+            <End Role="UZYTKOWNIK" EntitySet="UZYTKOWNIK" />
+            <End Role="BAZA_DANYCH" EntitySet="BAZA_DANYCH" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TEST__ID_BAZA__7F2BE32F" Association="Self.FK__TEST__ID_BAZA__7F2BE32F">
+            <End Role="BAZA_DANYCH" EntitySet="BAZA_DANYCH" />
+            <End Role="TEST" EntitySet="TEST" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ODPOWIEDZ__ID_PY__05D8E0BE" Association="Self.FK__ODPOWIEDZ__ID_PY__05D8E0BE">
+            <End Role="PYTANIE" EntitySet="PYTANIE" />
+            <End Role="ODPOWIEDZ" EntitySet="ODPOWIEDZ" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ODPOWIEDZ__ID_TE__06CD04F7" Association="Self.FK__ODPOWIEDZ__ID_TE__06CD04F7">
+            <End Role="TEST" EntitySet="TEST" />
+            <End Role="ODPOWIEDZ" EntitySet="ODPOWIEDZ" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ODPOWIEDZ__ID_UZ__07C12930" Association="Self.FK__ODPOWIEDZ__ID_UZ__07C12930">
+            <End Role="UZYTKOWNIK" EntitySet="UZYTKOWNIK" />
+            <End Role="ODPOWIEDZ" EntitySet="ODPOWIEDZ" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PYTANIE__ID_TEST__02FC7413" Association="Self.FK__PYTANIE__ID_TEST__02FC7413">
+            <End Role="TEST" EntitySet="TEST" />
+            <End Role="PYTANIE" EntitySet="PYTANIE" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TEST__ID_UZYTKOW__00200768" Association="Self.FK__TEST__ID_UZYTKOW__00200768">
+            <End Role="UZYTKOWNIK" EntitySet="UZYTKOWNIK" />
+            <End Role="TEST" EntitySet="TEST" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="APLIKACJA_SQLEntities">
+          <EntitySetMapping Name="BAZA_DANYCH">
+            <EntityTypeMapping TypeName="Model.BAZA_DANYCH">
+              <MappingFragment StoreEntitySet="BAZA_DANYCH">
+                <ScalarProperty Name="ID_BAZA" ColumnName="ID_BAZA" />
+                <ScalarProperty Name="TYP" ColumnName="TYP" />
+                <ScalarProperty Name="SCIEZKA" ColumnName="SCIEZKA" />
+                <ScalarProperty Name="HASLO" ColumnName="HASLO" />
+                <ScalarProperty Name="LOGIN" ColumnName="LOGIN" />
+                <ScalarProperty Name="NAZWA" ColumnName="NAZWA" />
+                <ScalarProperty Name="ID_UZYTKOWNIKA" ColumnName="ID_UZYTKOWNIKA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ODPOWIEDZ">
+            <EntityTypeMapping TypeName="Model.ODPOWIEDZ">
+              <MappingFragment StoreEntitySet="ODPOWIEDZ">
+                <ScalarProperty Name="ID_ODPOWIEDZI" ColumnName="ID_ODPOWIEDZI" />
+                <ScalarProperty Name="ODPOWIEDZ1" ColumnName="ODPOWIEDZ" />
+                <ScalarProperty Name="ID_PYTANIE" ColumnName="ID_PYTANIE" />
+                <ScalarProperty Name="ID_TEST" ColumnName="ID_TEST" />
+                <ScalarProperty Name="ID_UZYTKOWNIKA" ColumnName="ID_UZYTKOWNIKA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PYTANIE">
+            <EntityTypeMapping TypeName="Model.PYTANIE">
+              <MappingFragment StoreEntitySet="PYTANIE">
+                <ScalarProperty Name="ID_PYTANIE" ColumnName="ID_PYTANIE" />
+                <ScalarProperty Name="PYTANIE1" ColumnName="PYTANIE" />
+                <ScalarProperty Name="ID_TEST" ColumnName="ID_TEST" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TEST">
+            <EntityTypeMapping TypeName="Model.TEST">
+              <MappingFragment StoreEntitySet="TEST">
+                <ScalarProperty Name="ID_TEST" ColumnName="ID_TEST" />
+                <ScalarProperty Name="NAZWA" ColumnName="NAZWA" />
+                <ScalarProperty Name="CZAS_START" ColumnName="CZAS_START" />
+                <ScalarProperty Name="CZAS_STOP" ColumnName="CZAS_STOP" />
+                <ScalarProperty Name="KLUCZ" ColumnName="KLUCZ" />
+                <ScalarProperty Name="ID_BAZA" ColumnName="ID_BAZA" />
+                <ScalarProperty Name="ID_UZYTKOWNIKA" ColumnName="ID_UZYTKOWNIKA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UZYTKOWNIK">
+            <EntityTypeMapping TypeName="Model.UZYTKOWNIK">
+              <MappingFragment StoreEntitySet="UZYTKOWNIK">
+                <ScalarProperty Name="ID_UZYTKOWNIKA" ColumnName="ID_UZYTKOWNIKA" />
+                <ScalarProperty Name="IMIE" ColumnName="IMIE" />
+                <ScalarProperty Name="NAZWISKO" ColumnName="NAZWISKO" />
+                <ScalarProperty Name="NR_INDEKSU" ColumnName="NR_INDEKSU" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="TYP_KONTA" ColumnName="TYP_KONTA" />
+                <ScalarProperty Name="LOGIN" ColumnName="LOGIN" />
+                <ScalarProperty Name="HASLO" ColumnName="HASLO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

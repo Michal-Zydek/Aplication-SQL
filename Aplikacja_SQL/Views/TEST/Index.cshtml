@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Aplikacja_SQL.Models.TEST>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_TEST)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NAZWA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CZAS_START)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CZAS_STOP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KLUCZ)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BAZA_DANYCH.TYP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UZYTKOWNIK.IMIE)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.ID_TEST)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NAZWA)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CZAS_START)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CZAS_STOP)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.KLUCZ)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.BAZA_DANYCH.TYP)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.UZYTKOWNIK.IMIE)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.ID_TEST }) |
+        @Html.ActionLink("Details", "Details", new { id = item.ID_TEST }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.ID_TEST })
+    </td>
+</tr>
+}
+
+</table>

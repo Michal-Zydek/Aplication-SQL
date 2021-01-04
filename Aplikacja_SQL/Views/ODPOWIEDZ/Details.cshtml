@@ -1,0 +1,51 @@
+﻿@model Aplikacja_SQL.Models.ODPOWIEDZ
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ODPOWIEDZ</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ODPOWIEDZ1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODPOWIEDZ1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PYTANIE.PYTANIE1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PYTANIE.PYTANIE1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TEST.NAZWA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TEST.NAZWA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UZYTKOWNIK.IMIE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UZYTKOWNIK.IMIE)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_ODPOWIEDZI }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

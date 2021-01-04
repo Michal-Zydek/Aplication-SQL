@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Aplikacja_SQL.Models.BAZA_DANYCH>
+
+@{
+    ViewBag.Title = "ViewB";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<table class="table" style="background-color:white; width:700px; position:relative; left:160px; border-radius:10px; top:-160px; border-top:hidden; float:left; ">
+    <tr>
+        <th>
+            Typ
+        </th>
+        <th>
+            DataSource
+        </th>
+
+        <th>
+            Login
+        </th>
+        <th>
+            Baza
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TYP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SCIEZKA)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.LOGIN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NAZWA)
+            </td>
+
+            <td>
+
+                @Html.ActionLink("Edytuj", "EditBaza", new { ID_Baza = item.ID_BAZA }) |
+                <i class="icon-trash" href="#" onclick="DeleteB(@item.ID_BAZA)"></i>
+            </td>
+        </tr>
+    }
+
+</table>
+
+@using (Html.BeginForm("Addbaza", "ViewBaza"))
+{
+    <div class="col-md-offset-2 col-md-10" style="float:left; position:relative; left:520px; top:-170px;" >
+        <button class="btn" style="font-size:25px;  "><i class="icon-plus"></i>Dodaj</button>
+    </div>
+}

@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Aplikacja_SQL.Models.TEST>
+
+@{
+    ViewBag.Title = "ViewT";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+
+
+
+
+<table class="table" style="background-color:white; width:700px; position:relative; left:160px; border-radius:10px; top:-160px; border-top:hidden;">
+    <tr>
+        <th>
+            Nazwa Testu
+        </th>
+        <th>
+            Aktywacja
+        </th>
+        <th>
+            Dezaktywacja
+        </th>
+        <th>
+            Klucz
+        </th>
+        <th>
+            Typ Bazy
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NAZWA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CZAS_START)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CZAS_STOP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KLUCZ)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BAZA_DANYCH.TYP)
+            </td>
+            <td>
+                <button class="btn" onclick="EditT(@item.ID_TEST)">Edytuj</button>
+                <i class="icon-doc-text" href="#" onclick="location.href='@Url.Action("ViewO", "ViewTest",new { ID_TEST = item.ID_TEST })'"></i> |
+                <i class="icon-trash" href="#" onclick="DeleteT(@item.ID_TEST)"></i>
+            </td>
+        </tr>
+    }
+
+</table>
+
+@using (Html.BeginForm("AddTest", "ViewTest"))
+{
+    <div class="col-md-offset-2 col-md-10" style="float:left; position:relative; left:520px; top:-170px;">
+        <button class="btn" style="font-size:25px;  "><i class="icon-plus"></i>Dodaj</button>
+    </div>
+}

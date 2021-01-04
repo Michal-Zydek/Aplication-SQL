@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Aplikacja_SQL.Models.ODPOWIEDZ>
+@{
+    ViewBag.Title = "ViewO";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<table class="table" style="background-color:white; width:700px; position:relative; left:160px; border-radius:10px; top:-160px; border-top:hidden;">
+    <tr>
+        <th>
+            Imię i nazwisko
+        </th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.UZYTKOWNIK.IMIE)  @Html.DisplayFor(modelItem => item.UZYTKOWNIK.NAZWISKO)
+    </td>
+    <td>
+        @using (Html.BeginForm("ViewO_User", "ViewOdpowiedz", new { ID_TEST = item.ID_TEST , ID_User=item.ID_UZYTKOWNIKA}))
+        {
+        <div>
+            <button class="btn" style="font-size:15px;  "><i class="icon-doc-text"></i>Odpowiedzi</button>           
+        </div>
+        }
+        </td>
+  </tr>
+       
+  
+    }
+
+</table>
+

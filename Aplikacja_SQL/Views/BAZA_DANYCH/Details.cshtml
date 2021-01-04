@@ -1,0 +1,67 @@
+﻿@model Aplikacja_SQL.Models.BAZA_DANYCH
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BAZA_DANYCH</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TYP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TYP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SCIEZKA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SCIEZKA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HASLO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HASLO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LOGIN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LOGIN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NAZWA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NAZWA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UZYTKOWNIK.IMIE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UZYTKOWNIK.IMIE)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_BAZA }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

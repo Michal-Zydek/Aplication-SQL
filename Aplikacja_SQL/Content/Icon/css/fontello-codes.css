@@ -1,0 +1,13 @@
+
+.icon-edit:before { content: '\e062'; } /* '' */
+.icon-database:before { content: '\e800'; } /* '' */
+.icon-play:before { content: '\e801'; } /* '' */
+.icon-book-open:before { content: '\e802'; } /* '' */
+.icon-logout:before { content: '\e803'; } /* '' */
+.icon-pencil:before { content: '\e804'; } /* '' */
+.icon-home:before { content: '\e805'; } /* '' */
+.icon-plus:before { content: '\e806'; } /* '' */
+.icon-cancel:before { content: '\e807'; } /* '' */
+.icon-trash:before { content: '\e808'; } /* '' */
+.icon-user:before { content: '\f061'; } /* '' */
+.icon-doc-text:before { content: '\f0f6'; } /* '' */

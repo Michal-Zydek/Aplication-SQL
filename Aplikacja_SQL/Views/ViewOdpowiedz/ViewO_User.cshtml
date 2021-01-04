@@ -1,0 +1,85 @@
+﻿@model Aplikacja_SQL.Models.MyModels.Pytanie_Odpowiedz
+@{
+    ViewBag.Title = "ViewO_User";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="Title">Odpowiedzi :)</h2>
+<hr />
+
+<div id="Bodycontener1" style="color:white ">
+
+
+    <div style="clear:both; font-size:20px; position:relative; left:220px;">
+        Imie:
+        @ViewBag.Imie <br>
+        Nazwisko:
+        @ViewBag.Nazwisko<br>
+        Nr Indeksu:
+        @ViewBag.Index<br>
+    </div>
+
+</div>
+
+<div id="LineAddData" style="left:240px; height:260px; "> </div>
+
+
+<div id="Bodycontener2">
+       
+    <div style="color:white; position:relative; left:220px;">
+        @foreach (var itemO in Model.oDPOWIEDZ)
+        {
+
+
+            foreach (var itemP in Model.pYTANIE)
+            {
+
+
+                for(int i=0;i< @ViewBag.Rows;i++)
+                {
+
+
+                    var odp = Model.oDPOWIEDZ.ElementAt(i);
+                    var pyt = Model.pYTANIE.ElementAt(i);
+                    var zad = i + 1;
+
+        <div style="background-color:#686867; width:600px; border-radius: 10px">
+            <div style="font-size:25px;">Zadanie @zad</div>
+            
+            
+            <div style="font-size:20px ;">
+            @pyt.PYTANIE1
+                </div>
+
+            <div style="background-color:#797979; width:600px;height:60px; border-radius: 10px">
+                <br>
+                <div style="font-size:20px;">
+                @odp.ODPOWIEDZ1
+                    </div>
+            </div>
+        </div>
+                    <br>
+                    <br>
+                    
+                }
+
+
+
+                break;
+
+            }
+
+            break;
+
+        }
+
+
+        <br>
+
+    </div>
+    
+
+
+
+</div>
+<div style="clear:both"></div>

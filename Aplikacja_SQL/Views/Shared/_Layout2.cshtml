@@ -1,0 +1,121 @@
+﻿
+@{
+    ViewBag.Title = "_Layout2";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<h2 style="float:left;" class="Title">Witaj @ViewBag.Imie :)</h2>
+@using (Html.BeginForm("Logout", "User"))
+{
+    <button class="btn btn-link"> <i class="icon-logout" style="position:relative; left:750px; top:20px; font-size:30px; color:white"> WYLOGUJ </i> </button>
+}
+
+
+
+<hr />
+@if (ViewBag.Details == 1)
+{
+    <div class="alert alert-success" style="text-align:center; background-color:#00f530; ">
+        Pomyślnie Edytowano !!
+    </div>
+}
+@if (ViewBag.Details == 2)
+{
+    <div class="alert alert-success" style="text-align:center; background-color:#00f530; ">
+        Pomyślnie Dodano !!
+    </div>
+}
+@if (ViewBag.Details == 3)
+{
+    <div class="alert alert-danger" style="text-align:center; background-color:#FF0000; color:white">
+        Błędny Klucz !!
+    </div>
+}
+@if (ViewBag.Details == 4)
+{
+    <div class="alert alert-success" style="text-align:center; background-color:#00f530; color:white">
+        Pomyślnie Usunięto !!
+    </div>
+}
+@if (ViewBag.Details == 5)
+{
+    <div class="alert alert-danger" style="text-align:center; background-color:#FF0000; color:white ">
+        Test nie jest aktywny!!
+    </div>
+}
+@if (ViewBag.Details == 6)
+{
+    <div class="alert alert-success" style="text-align:center; background-color:#00f530; ">
+        Zapisano test Pomyślnie !
+    </div>
+}
+@if (ViewBag.Details == 7)
+{
+    <div class="alert alert-danger" style="text-align:center; background-color:#FF0000; color:white ">
+    Test został napisany !
+    </div>
+}
+<div>
+    <i class="icon-user"></i>
+    @using (Html.BeginForm("User_EditUser", "User"))
+    {
+
+        <div class="col-md-offset-2 col-md-10">
+            <button class="btn" style="font-size:25px;position:relative; right:435px; top:120px;"><i class="icon-pencil"></i>Edytuj</button>
+        </div>
+    }
+</div>
+
+<div id="nawbar" style="border-radius:20px;">
+    <div class="form-horizontal">
+
+
+        @using (Html.BeginForm("User_ViewBaza", "User"))
+        {
+            <div class="col-md-offset-2 col-md-10" style="position:relative; float:left;">
+                <button class="btn" style="font-size:25px;position:relative; right:390px; top:-55px;"><i class="icon-database"></i>Bazy</button>
+            </div>
+        }
+
+        @using (Html.BeginForm("User_ViewTest", "User"))
+        {
+            <div class="col-md-offset-2 col-md-10" style="position:relative; float:left;">
+                <button class="btn" style="font-size:25px;position:relative; top:-115px; right:80px;"><i class="icon-book-open"></i>Testy</button>
+            </div>
+        }
+
+
+
+
+
+
+        @using (Html.BeginForm("User_SQL", "User"))
+        {
+            <div class="col-md-10" style=" left:10%; position:relative; float:left; ">
+                <input class="btn" type="text" name="Klucz" id="Klucz" style="font-size:25px;position:relative; top:-115px; right:80px; width:155px;" placeholder="Klucz Testu"> />
+            </div>
+
+
+            <div class="col-md-offset-2 col-md-10" style="position:relative; float:left;">
+                <button class="btn" style="font-size:25px;position:relative; top:-175px; left:400px;"><i class="icon-edit"></i>Napisz</button>
+            </div>
+        }
+
+
+
+
+    </div>
+</div>
+
+<div class="container body-content">
+    @RenderBody()
+
+</div>
+
+
+<div style="clear:both;">
+</div>
+

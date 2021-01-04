@@ -1,0 +1,75 @@
+﻿@model Aplikacja_SQL.Models.UZYTKOWNIK
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>UZYTKOWNIK</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IMIE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IMIE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NAZWISKO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NAZWISKO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NR_INDEKSU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NR_INDEKSU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMAIL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMAIL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TYP_KONTA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TYP_KONTA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LOGIN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LOGIN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HASLO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HASLO)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_UZYTKOWNIKA }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

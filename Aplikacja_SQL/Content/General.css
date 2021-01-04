@@ -1,0 +1,115 @@
+﻿body {
+    background-image: url("/Content/Image/Tablica.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+footer {
+   text-align:center !important;
+   color:white !important;
+}
+/*Input */
+.col-md-10 {
+    width: 300px !important;
+    height:60px !important;
+    position:relative;
+    left:70%;
+    
+}
+/*input heigh*/
+.form-control{
+    height:50px !important;
+}
+/*Button position*/
+.col-md-offset-2{
+    position:relative;
+    left:80px;
+    
+}
+/*Conteiner 1 in registration*/
+#Bodycontener1 {
+    float:left;
+}
+/*Conteiner 2 in registration*/
+#Bodycontener2 {
+   float:left;
+}
+/*Line in registration page*/
+#LineRegistration {
+    border-left: 4px solid black;
+    height: 250px;
+    width: 60px;
+    float: left;
+    position: relative;
+    left:240px;
+    border-color:white;
+}
+/*Line in Add DataBase page*/
+#LineAddData{
+    border-left: 4px solid black;
+    height: 270px;
+    width: 60px;
+    float: left;
+    position: relative;
+    left: 120px;
+    border-color: white;
+}
+/*Line in page Edit User */
+#LineEditUser {
+    border-left: 4px solid black;
+    height: 120px;
+    width: 60px;
+    float: left;
+    position: relative;
+    left: 250px;
+    border-color: white;
+}
+/*Line in page AddT*/
+#LineAddTest{
+    border-left: 4px solid black;
+    height: 120px;
+    width: 60px;
+    float: left;
+    position: relative;
+    border-color: white;
+}
+
+
+/*Div Login */
+#Login {
+    width: 400px;
+    height: 550px;
+    background-color: #808080 !important;
+    border-radius: 10px;
+    position: relative;
+    left: 31%;
+    border-color: #919191;
+    border-style: solid;
+}
+/*Title in Page*/
+.Title{
+    position:relative;
+    left:210px;
+    color:white !important;
+}
+/*Logo in Page Login*/
+#Logo {
+    background-image: url("/Content/Image/Logo.jpg");
+    width:300px;
+    height:150px;
+
+}
+#nawbar{
+    width: 970px;
+    left: 170px;
+    height: 60px;
+    background-color: #424242;
+    position: relative;
+    top: -20px;
+    
+}
+.box{
+    width:300px !important;
+}
+

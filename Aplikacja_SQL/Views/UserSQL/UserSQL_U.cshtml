@@ -1,0 +1,96 @@
+﻿@model List<Aplikacja_SQL.Models.ODPOWIEDZ>
+
+@{
+    ViewBag.Title = "UserSQL_U";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    td, th, tr {
+        border: 2px solid #000000;
+        text-align: left;
+        padding: 8px;
+    }
+
+    body {
+        background-color: #606060 !important;
+        background-image: none;
+    }
+</style>
+
+<h2 class="Title">Test: @ViewBag.test</h2>
+
+<hr>
+
+@Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+
+    <div id="Bodycontener1">
+        <div style="width:500px; left:-150px; position:relative; top:5px;">
+            <input placeholder="Podaj zapytanie do bazy !!" style="width:500px; height:50px;" type="text" id="ask" class="col-md-offset-2 col-md-2" />
+        </div>
+
+        <div class="col-md-offset-2 col-md-10" style=" position:relative; left:250px; top:-45px;">
+            <button class="btn" id="play" style="font-size:25px;"><i style="color:#00CC00;" class="icon-play"></i></button>
+        </div>
+
+
+        <div id="message" style="color:red">
+
+        </div>
+
+        <div id="example" style="width:500px; background-color:white;">
+
+            <table id="table" class="table" style="border-collapse: collapse; width: 100%; ">
+            </table>
+
+        </div>
+    </div>
+
+    @using (Html.BeginForm())
+    {
+
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <div id="Bodycontener2">
+            <div style="width:500px; background-color:white; position:relative; left:20px; ">
+
+                @foreach (var i in ViewBag.Pytania)
+                {
+                    @i.PYTANIE1
+                    <br>
+                    
+                   
+                }
+
+
+
+                @for (int i = 0; i < Model.Count; i++)
+                {
+
+                    @Html.TextBoxFor(a => Model[i].ODPOWIEDZ1, new { style = "width:600px", placeholder = "Odpowiedz!" })
+
+                    <br>
+                }
+
+
+                <div class="form-group" style="clear:both;">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" style="background-color:#00f530; width:150px;position:relative; height:40px; left:-160px;" value="Zakończ" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    }
+
+
+    <div style="clear:both"> </div>
+</div>
+
+
+
+

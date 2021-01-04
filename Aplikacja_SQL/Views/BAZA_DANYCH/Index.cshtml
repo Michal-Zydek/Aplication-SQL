@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Aplikacja_SQL.Models.BAZA_DANYCH>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_BAZA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TYP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SCIEZKA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HASLO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LOGIN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NAZWA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UZYTKOWNIK.IMIE)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.ID_BAZA)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TYP)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SCIEZKA)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.HASLO)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.LOGIN)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NAZWA)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.UZYTKOWNIK.IMIE)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.ID_BAZA }) |
+        @Html.ActionLink("Details", "Details", new { id = item.ID_BAZA }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.ID_BAZA })
+    </td>
+</tr>
+}
+
+</table>

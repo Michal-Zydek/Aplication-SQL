@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="APLIKACJA_SQLEntities">
+    <EntitySetMapping Name="BAZA_DANYCH">
+      <EntityTypeMapping TypeName="Model.BAZA_DANYCH">
+        <MappingFragment StoreEntitySet="BAZA_DANYCH">
+          <ScalarProperty Name="ID_BAZA" ColumnName="ID_BAZA" />
+          <ScalarProperty Name="TYP" ColumnName="TYP" />
+          <ScalarProperty Name="SCIEZKA" ColumnName="SCIEZKA" />
+          <ScalarProperty Name="HASLO" ColumnName="HASLO" />
+          <ScalarProperty Name="LOGIN" ColumnName="LOGIN" />
+          <ScalarProperty Name="NAZWA" ColumnName="NAZWA" />
+          <ScalarProperty Name="ID_UZYTKOWNIKA" ColumnName="ID_UZYTKOWNIKA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ODPOWIEDZ">
+      <EntityTypeMapping TypeName="Model.ODPOWIEDZ">
+        <MappingFragment StoreEntitySet="ODPOWIEDZ">
+          <ScalarProperty Name="ID_ODPOWIEDZI" ColumnName="ID_ODPOWIEDZI" />
+          <ScalarProperty Name="ODPOWIEDZ1" ColumnName="ODPOWIEDZ" />
+          <ScalarProperty Name="ID_PYTANIE" ColumnName="ID_PYTANIE" />
+          <ScalarProperty Name="ID_TEST" ColumnName="ID_TEST" />
+          <ScalarProperty Name="ID_UZYTKOWNIKA" ColumnName="ID_UZYTKOWNIKA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PYTANIE">
+      <EntityTypeMapping TypeName="Model.PYTANIE">
+        <MappingFragment StoreEntitySet="PYTANIE">
+          <ScalarProperty Name="ID_PYTANIE" ColumnName="ID_PYTANIE" />
+          <ScalarProperty Name="PYTANIE1" ColumnName="PYTANIE" />
+          <ScalarProperty Name="ID_TEST" ColumnName="ID_TEST" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TEST">
+      <EntityTypeMapping TypeName="Model.TEST">
+        <MappingFragment StoreEntitySet="TEST">
+          <ScalarProperty Name="ID_TEST" ColumnName="ID_TEST" />
+          <ScalarProperty Name="NAZWA" ColumnName="NAZWA" />
+          <ScalarProperty Name="CZAS_START" ColumnName="CZAS_START" />
+          <ScalarProperty Name="CZAS_STOP" ColumnName="CZAS_STOP" />
+          <ScalarProperty Name="KLUCZ" ColumnName="KLUCZ" />
+          <ScalarProperty Name="ID_BAZA" ColumnName="ID_BAZA" />
+          <ScalarProperty Name="ID_UZYTKOWNIKA" ColumnName="ID_UZYTKOWNIKA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UZYTKOWNIK">
+      <EntityTypeMapping TypeName="Model.UZYTKOWNIK">
+        <MappingFragment StoreEntitySet="UZYTKOWNIK">
+          <ScalarProperty Name="ID_UZYTKOWNIKA" ColumnName="ID_UZYTKOWNIKA" />
+          <ScalarProperty Name="IMIE" ColumnName="IMIE" />
+          <ScalarProperty Name="NAZWISKO" ColumnName="NAZWISKO" />
+          <ScalarProperty Name="NR_INDEKSU" ColumnName="NR_INDEKSU" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="TYP_KONTA" ColumnName="TYP_KONTA" />
+          <ScalarProperty Name="LOGIN" ColumnName="LOGIN" />
+          <ScalarProperty Name="HASLO" ColumnName="HASLO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
