@@ -21,7 +21,7 @@ namespace Aplikacja_SQL.Controllers
             return View(tEST.ToList());
         }
 
-        // GET: TEST/Details/5
+        // GET: TEST/Details/ssss
         public ActionResult Details(int? id)
         {
             if (id == null)
