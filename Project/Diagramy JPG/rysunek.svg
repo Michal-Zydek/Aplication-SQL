@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   sodipodi:docname="rysunek.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="747.45055"
+     inkscape:cy="687.69275"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <circle
+       style="opacity:1;fill:#800080;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:0.03704352;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+       id="path1368-4-0"
+       cx="37.294117"
+       cy="146.42386"
+       r="33.603764" />
+    <path
+       style="opacity:1;fill:#ff2a2a;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:0.03534298;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+       d="m 129.05852,115.9407 6.08516,-22.710143 -0.13772,-0.0369 -6.67481,3.853698 -9.6611,-16.733529 -15.27107,8.816761 9.66109,16.733533 -6.6748,3.85369 -0.0369,0.13772 z"
+       id="rect1411"
+       inkscape:connector-curvature="0" />
+    <circle
+       style="opacity:1;fill:#ff5555;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:0.03704352;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+       id="path1368-4-0-0"
+       cx="93.544334"
+       cy="50.042953"
+       r="33.603767" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:'Clarendon Blk BT';-inkscape-font-specification:'Clarendon Blk BT';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="79.09819"
+       y="52.715652"
+       id="text5240"><tspan
+         sodipodi:role="line"
+         id="tspan5238"
+         x="79.09819"
+         y="52.715652"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.26458332">Model</tspan></text>
+    <path
+       style="opacity:1;fill:#800080;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:0.03534298;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+       d="m 74.223936,83.079933 -22.710145,6.085165 0.0369,0.137723 6.674803,3.853699 -9.661106,16.73352 15.271076,8.81676 9.661106,-16.73352 6.674813,3.8537 0.137714,-0.0369 z"
+       id="rect1411-6"
+       inkscape:connector-curvature="0" />
+    <circle
+       style="opacity:1;fill:#88aa00;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:0.03704352;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+       id="path1368-4-0-9"
+       cx="145.39462"
+       cy="146.42386"
+       r="33.603767" />
+    <path
+       style="opacity:1;fill:#668000;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:0.03534298;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+       d="m 73.385828,148.93268 16.62498,16.62498 0.10082,-0.10082 v -7.7074 H 109.43384 V 140.11592 H 90.111628 v -7.70741 l -0.10082,-0.10081 z"
+       id="rect1411-6-0"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:'Clarendon Blk BT';-inkscape-font-specification:'Clarendon Blk BT';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="130.64359"
+       y="150.14973"
+       id="text5299"><tspan
+         sodipodi:role="line"
+         id="tspan5297"
+         x="130.64359"
+         y="150.14973"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.26458332">Widok</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:'Clarendon Blk BT';-inkscape-font-specification:'Clarendon Blk BT';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="15.341969"
+       y="150.14973"
+       id="text5303"><tspan
+         sodipodi:role="line"
+         id="tspan5301"
+         x="15.341969"
+         y="150.14973"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.26458332">Kontroler</tspan></text>
+  </g>
+</svg>

@@ -1,0 +1,27 @@
+Hasło do konta
+Hasło: %eQrBOGXRHti9YIS
+
+BAZA DANYCH ONLINE PHP MY ADMIN
+Server: sql7.freemysqlhosting.net
+Name: sql7362158
+Username: sql7362158
+Password: ZNk5AJN9sr
+Port number: 3306
+
+
+BAZA DAMYCH LOCALHOST POSTGRESQL\
+Server:localhost
+Name:Egzamin
+UserName:postgres
+Password:admin
+Number port:5432
+
+BAZA DAMYCH LOCALHOST ORACLE\
+Server:localhost
+Name:Test
+Username:SYS
+Password:admin
+Numer port:1521
+
+
+Select  COUNT(*) as "Liczba pozycji" from daty
